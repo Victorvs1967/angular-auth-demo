@@ -1,3 +1,4 @@
+import { VERSION } from '@angular/core';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-auth-demo';
+  title = 'Angular: ' + VERSION.major;
 }
