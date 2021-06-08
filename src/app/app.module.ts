@@ -11,7 +11,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { MatButtonModule } from '@angular/material/button';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
 import { MokBackendInterceptor } from './mock-backend/mock-backend.interceptor';
 
 export const AUTHENTICATION_CONFIG = { authEndpoint: '/users/authenticate', initialPage: 'home' };
@@ -29,7 +28,6 @@ export const AUTHENTICATION_CONFIG = { authEndpoint: '/users/authenticate', init
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
     MatButtonModule,
     AuthenticationModule.forRoot(AUTHENTICATION_CONFIG),
   ],

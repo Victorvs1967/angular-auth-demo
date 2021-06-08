@@ -1,6 +1,7 @@
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable, of, throwError } from "rxjs";
+
 import { User } from "../authentication/models/user.model";
 
 const users: User[] = [{ id: "1", username: "admin", password: "admin" }, { id: "2", username: "user", password: "user" }];

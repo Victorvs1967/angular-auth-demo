@@ -3,6 +3,7 @@ import { Inject, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+
 import { LibraryConfig } from './models/config';
 import { User } from './models/user.model';
 
@@ -17,23 +18,23 @@ export class AuthenticationService {
     return this.http.post<User>(this.config.authEndpoint, { username: user.username, password: user.password })
       .pipe(
           map(usr => {
-            localStorage.setItem('musicUser', JSON.stringify(usr));
+            localStorage.setItem('storUser', JSON.stringify(usr));
             return usr;
         })
       );
   }
 
   logout(): void {
-    localStorage.removeItem('musicUser');
+    localStorage.removeItem('storUser');
     this.router.navigate(['/login']);
   }
 
   getLoggedUser(): User {
-    return JSON.parse(localStorage.getItem('musicUser') ?? '{}');
+    return JSON.parse(localStorage.getItem('storUser') ?? JSON.stringify(null));
   }
 
   isUserAuthenticated(): boolean {
-    return !!localStorage.getItem('musicUser');
+    return !!localStorage.getItem('storUser');
   }
 
 }
